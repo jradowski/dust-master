@@ -1,19 +1,16 @@
-
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import 'reactjs-popup/dist/index.css'
-import supabase from 'C:/dust-master/supabaseClient.js'
-import { useEffect, useState } from 'react'
-
+import supabase from '/dust-maste2/dust-master/supabaseClient.js';
 
 
 
 const fetchData = async () => {
     const { data, error } = await supabase
         .from('horse')
-        .select('*')
-        .eq('id', 1)
+        .select('*, image_url')
+        .eq('id', 5)
         .single()
 
     console.log('Supabase data:', data)
@@ -26,83 +23,75 @@ const fetchData = async () => {
     return data
 }
 
+
+
 const Home = async () => {
     const data = await fetchData()
+    const zdj= data.image_url ? data.image_url : "/Kolorado.jpg";
 
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
-            <div>
-                <h1>Data from Supabase</h1>
-                <ul>
-                    <li>{data.id}</li>
-                </ul>
-            </div>
+        <main className="flex flex-col items-center ">
 
 
+            <div
+                className="grid grid-cols-2 gap-5 font-sans  text-lg text-black leading-8 border-b px-5 py-4  border-gray-500 border-opacity-50 bg-gradient-to-b from-gray-400 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white content-center pb-6 pt-8 p-5 rounded-xl mb-24">
 
-            <div className="z-10  w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
+                <div className="columns-1 flex flex-col gap-3 h-1/2 ">
+                    <div>
+                        <Image
+                            className="rounded-2xl border-2 border-gray-900"
+                            src={zdj}
+                            alt="Kolorado KG"
+                            width={400}
+                            height={200}
+                        />
+                    </div>
+                    <div>
+                        <div className=" w-fill grid grid-cols-2 gap-15  ">
 
+                            <div >
+                                <h1 className="font-semibold text-xl">Ojciec:</h1>
+                                <h2>{data.data_urodzenia}</h2>
+                            </div>
+                            <div>
+                                <h1 className="font-semibold text-xl">Matka(& oj.Matki):</h1>
+                                <h2>{data.plec}</h2>
+                            </div>
 
-                <div
-                    className="fixed left-0 top-0 flex w-full items-center justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-                    <Image
-                        src="/profile.jpg"
-                        alt="avatar"
-                        className="rounded-full p-1"
-                        width={50}
-                        height={24}
-                    />
-                    Kamil Ślimak&nbsp;
-                </div>
-                <div
-                    className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-
-
-                    <Link href="/">
-                        <p className="fixed left-0 top-0 flex w-full items-center justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-                            HOME
-                        </p>
-                    </Link>
+                        </div>
+                    </div>
 
                 </div>
-            </div>
 
-            <div className="columns-2 font-mono border-b border-gray-300 bg-gradient-to-b from-zinc-200 px-5 py-4 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit rounded-3xl content-center m-20">
+
                 <div>
-                    <Image
-                        className="rounded-2xl"
-                        src="/Kolorado.jpg"
-                        alt="Kolorado KG"
-                        width={400}
-                        height={400}
-                    />
-                </div>
-                <div>
-                    <h1 className="font-bold text-center text-2xl w-auto">
+                    <h1 className="font-sans text-center text-3xl  w-auto">
                         {data.imie}
                     </h1>
                     <ul>
-                        <h2 className="font-semibold">Data urodzenia:</h2>
-                        <li>2008-08-11</li>
-                        <h2 className="font-semibold">Płeć:</h2>
-                        <li>ogier</li>
-                        <h2 className="font-semibold">Rasa:</h2>
+                        <h2 className="font-semibold text-xl">Data urodzenia:</h2>
+                        <li>{data.data_urodzenia}</li>
+                        <h2 className="font-semibold text-xl">Płeć:</h2>
+                        <li>{data.plec}</li>
+                        <h2 className="font-semibold text-xl">Rasa:</h2>
                         <li>Polski Koń Sportowy</li>
-                        <h2 className="font-semibold">Właścicel:</h2>
-                        <li>Grzegorz Narętka</li>
+                        <h2 className="font-semibold text-xl">Właścicel:</h2>
+                        <li>{data.wlasciciel}</li>
                     </ul>
                 </div>
 
+
             </div>
-            <div className="flex-col columns-2 gap-2 items-center">
-                <div className="w-auto font-mono px-5 py-4 border-b border-gray-300 bg-gradient-to-b from-zinc-200 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit rounded-3xl content-center ">
-                    <Link className="font-mono " href="/photos">Rodowód</Link>
-                </div>
-                <div
-                    className="w-auto font-mono px-5 py-4 border-b border-gray-300 bg-gradient-to-b from-zinc-200 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit rounded-3xl content-center ">
+            <div
+                className="w-auto grid grid-cols-2 gap-20  font-sans  text-lg text-black leading-8 border-b px-5 py-4  border-gray-500 border-opacity-50 bg-gradient-to-b from-gray-400 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white rounded-2xl content-center ">
+                <div className="mt-2">
                     <h1 className="text-xl">Wizyta kowala:</h1>
-                    <h2 className="text-opacity-50">
-                        10.06.2024
+                    <h2 className="text-opacity-50 ">{data.kowal}</h2>
+                </div>
+                <div className="mt-2">
+                    <h1 className="text-xl">Ilość miarek: {data.wielkosc_posilku}</h1>
+                    <h2 className="text-opacity-50 ">
+                        {data.posilek}
                     </h2>
                 </div>
             </div>

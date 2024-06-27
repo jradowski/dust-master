@@ -2,87 +2,92 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import Popup from "reactjs-popup";
 import 'reactjs-popup/dist/index.css'
-import supabase from 'C:/dust-master/supabaseClient.js'
-import { useEffect, useState } from 'react';
+import supabase from '/dust-maste2/dust-master/supabaseClient.js';
+
 
 
 let fetchData = async () => {
     let { data, error } = await supabase
       .from('horse')
       .select('*')
-      .eq('id', 1)
+      .eq('nr_boksu', 1)
       .single()
-
-    console.log('Supabase data:', data)
-    console.log('Supabase error:', error)
   
-    if (error) {
-      console.error(error)
-      console.log('blad debilu')
-    }
+    return data
+};
+let fetchData2 = async () => {
+    let { data, error } = await supabase
+      .from('horse')
+      .select('*')
+      .eq('nr_boksu', 2)
+      .single()
+  
+    return data
+};
+let fetchData3 = async () => {
+    let { data, error } = await supabase
+      .from('horse')
+      .select('*')
+      .eq('nr_boksu', 3)
+      .single()
+  
+    return data
+};
+let fetchData4 = async () => {
+    let { data, error } = await supabase
+      .from('horse')
+      .select('*')
+      .eq('nr_boksu', 4)
+      .single()
+  
+    return data
+};
+let fetchData5 = async () => {
+    let { data, error } = await supabase
+      .from('horse')
+      .select('*')
+      .eq('nr_boksu', 5)
+      .single()
+  
     return data
 };
 
-
-export default function page() {
-
+export default async function page() {
+    const data = await fetchData()
+    const data2 = await fetchData2()
+    const data3 = await fetchData3()
+    const data4 = await fetchData4()
+    const data5 = await fetchData5()
     return (
-  <main className="flex min-h-screen flex-col items-center justify-between p-24">
-    <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        
-
-        <div className="fixed left-0 top-0 flex w-full items-center justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-        <Image
-        src="/profile.jpg"
-        alt="avatar"
-        className="rounded-full p-1"
-        width={50}
-        height={24}
-        />
-          <h1>{data.imie}</h1>
-          Kamil Ślimak&nbsp;
-        </div>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
+  <main className=" min-h-full p-24">
 
 
-              <Link href="/">
-                  <p className="fixed left-0 top-0 flex w-full items-center justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-                      HOME
-                  </p>
-              </Link>
-
-        </div>
-      </div>
-
-    <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-      <p className="relative text-5xl ">Stajnia Oxer</p>
-    </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-3 lg:text-left">
+      <div className=" flex flex-col gap-4 text-center  lg:mb-0 lg:w-full lg:max-w-5xl  lg:text-left">
 
 
           <Link href="/dashboard/boxes/Box1">
               <div
-                  className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-red-500 hover:bg-red-950  hover:text-red-500"
+                  className=" rounded-lg  border-transparent px-5 py-4 bg-gradient-to-t from-white border-gray-600 bg-gray-400 text-gray-800 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white "
               >
                   <h2 className="mb-3 text-2xl font-semibold">
                       1{" "}
+                      
                       <span
                           className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
+              
             </span>
                   </h2>
                   <p className="m-0 max-w-[30ch] text-sm opacity-50">
-                      Kolorado KG
+                  {data.imie}
                   </p>
               </div>
           </Link>
 
           <Link href="/dashboard/boxes/Box2">
               <div
-                  className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-green-500 hover:bg-green-950  hover:text-green-500"
+                  className=" rounded-lg  border-transparent px-5 py-4 bg-gradient-to-t from-white border-gray-600 bg-gray-400 text-gray-800 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white "
               >
                   <h2 className="mb-3 text-2xl font-semibold">
                       2{" "}
@@ -92,7 +97,7 @@ export default function page() {
             </span>
                   </h2>
                   <p className="m-0 max-w-[30ch] text-sm opacity-50">
-                      Wolny
+                  {data2.imie}
                   </p>
               </div>
           </Link>
@@ -102,7 +107,7 @@ export default function page() {
 
           <Link href="/dashboard/boxes/Box3">
               <div
-                  className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-green-500 hover:bg-green-950  hover:text-green-500"
+                  className=" rounded-lg  border-transparent px-5 py-4 bg-gradient-to-t from-white border-gray-600 bg-gray-400 text-gray-800 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white "
               >
                   <h2 className="mb-3 text-2xl font-semibold">
                       3{" "}
@@ -112,14 +117,14 @@ export default function page() {
             </span>
                   </h2>
                   <p className="m-0 max-w-[30ch] text-sm opacity-50">
-                      Wolny
+                  {data3.imie}
                   </p>
               </div>
           </Link>
 
           <Link href="/dashboard/boxes/Box4">
               <div
-                  className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-green-500 hover:bg-green-950  hover:text-green-500"
+                  className=" rounded-lg  border-transparent px-5 py-4 bg-gradient-to-t from-white border-gray-600 bg-gray-400 text-gray-800 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white "
               >
                   <h2 className="mb-3 text-2xl font-semibold">
                       4{" "}
@@ -129,14 +134,15 @@ export default function page() {
             </span>
                   </h2>
                   <p className="m-0 max-w-[30ch] text-sm opacity-50">
-                      Wolny
+                  {data4.imie}
                   </p>
               </div>
           </Link>
 
           <Link href="/dashboard/boxes/Box5">
+            
               <div
-                  className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-green-500 hover:bg-green-950  hover:text-green-500"
+                  className=" rounded-lg  border-transparent px-5 py-4 bg-gradient-to-t from-white border-gray-600 bg-gray-400 text-gray-800 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white "
               >
                   <h2 className="mb-3 text-2xl font-semibold">
                       5{" "}
@@ -146,24 +152,24 @@ export default function page() {
             </span>
                   </h2>
                   <p className="m-0 max-w-[30ch] text-sm opacity-50">
-                      Wolny
+                  {data5.imie}
                   </p>
               </div>
           </Link>
 
           <Link href="/dashboard/boxes/Box6">
               <div
-                  className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-green-500 hover:bg-green-950  hover:text-green-500"
+                  className="rounded-lg  border-transparent px-5 py-4 bg-gradient-to-t from-white border-gray-600 bg-gray-400 text-gray-800 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white "
               >
                   <h2 className="mb-3 text-2xl font-semibold">
-                      Dodaj +{" "}
+                      Zarządzaj stajnią{" "}
                       <span
                           className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
             </span>
                   </h2>
                   <p className="m-0 max-w-[30ch] text-sm opacity-50">
-                      Wolny
+                      Panel administracyjny
                   </p>
               </div>
           </Link>

@@ -8,33 +8,33 @@ import supabase from '/dust-maste2/dust-master/supabaseClient.js';
 
 const fetchData = async () => {
     const { data, error } = await supabase
-        .from('horse')
-        .select('*, image_url')
-        .eq('id', 3)
-        .single()
+      .from('horse')
+      .select('*, image_url')
+      .eq('id', 1)
+      .single()
 
     console.log('Supabase data:', data)
     console.log('Supabase error:', error)
-
+  
     if (error) {
-        console.error(error)
-        console.log('blad debilu')
+      console.error(error)
+      console.log('blad debilu')
     }
     return data
-}
+  }
+  
 
-
-
-const Home = async () => {
+  
+  const Home = async () => {
     const data = await fetchData()
     const zdj= data.image_url ? data.image_url : "/Kolorado.jpg";
-
+  
     return (
         <main className="flex flex-col items-center ">
 
 
             <div
-                className="grid grid-cols-2 gap-5 font-sans  text-lg text-black leading-8 border-b px-5 py-4  border-gray-500 border-opacity-50 bg-gradient-to-b from-gray-400 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white  content-center pb-6 pt-8 p-5 rounded-xl mb-24">
+                className="grid grid-cols-2 gap-5 font-sans  text-lg text-black leading-8 border-b px-5 py-4  border-gray-500 border-opacity-50 bg-gradient-to-b from-gray-400  dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white   content-center pb-6 pt-8 p-5 rounded-xl mb-24">
 
                 <div className="columns-1 flex flex-col gap-3 h-1/2 ">
                     <div>
@@ -50,11 +50,11 @@ const Home = async () => {
                         <div className=" w-fill grid grid-cols-2 gap-15  ">
 
                             <div >
-                                <h1 className="font-semibold text-xl">Ojciec:</h1>
+                            <h1 className="font-semibold text-xl">Ojciec:</h1>
                                 <h2>{data.data_urodzenia}</h2>
                             </div>
                             <div>
-                                <h1 className="font-semibold text-xl">Matka(& oj.Matki):</h1>
+                            <h1 className="font-semibold text-xl">Matka(& oj.Matki):</h1>
                                 <h2>{data.plec}</h2>
                             </div>
 
@@ -83,7 +83,7 @@ const Home = async () => {
 
             </div>
             <div
-                className="w-auto grid grid-cols-2 gap-20  font-sans  text-lg text-black leading-8 border-b px-5 py-4 border-gray-500 border-opacity-50 bg-gradient-to-b from-gray-400 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white  rounded-2xl content-center ">
+                className="w-auto grid grid-cols-2 gap-20  font-sans  text-lg text-black leading-8 border-b px-5 py-4  border-gray-500 border-opacity-50 bg-gradient-to-b from-gray-400  dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white  rounded-2xl content-center ">
                 <div className="mt-2">
                     <h1 className="text-xl">Wizyta kowala:</h1>
                     <h2 className="text-opacity-50 ">{data.kowal}</h2>
@@ -101,7 +101,7 @@ const Home = async () => {
 
 
     )
-}
+  }
 
 export default Home;
 

@@ -1,90 +1,87 @@
-import React from 'react'
-import Image from "next/image";
-import Link from "next/link";
-
-export default function page() {
-  return (
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
-          <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-
-
-              <div
-                  className="fixed left-0 top-0 flex w-full items-center justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-                  <Image
-                      src="/profile.jpg"
-                      alt="avatar"
-                      className="rounded-full p-1"
-                      width={50}
-                      height={24}
-                  />
-                  Kamil Ślimak&nbsp;
-              </div>
-              <div
-                  className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-                  <a
-                      className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                  >
+"use client";
+import Image from 'next/image'
+import Link from 'next/link'
+import 'reactjs-popup/dist/index.css'
+import React, { useEffect, useState } from 'react';
+import supabase from '/dust-maste2/dust-master/supabaseClient.js';
+import SignUp from 'C:/dust-maste2/dust-master/SingUp';
+import Login from 'C:/dust-maste2/dust-master/Login';
+import Wylogowany from 'C:/dust-maste2/dust-master/Wylogowany';
 
 
-                  </a>
-              </div>
 
-              <div
-                  className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-                  <a
-                      className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                  >
-                      <Link href="/">
-                          <p className="fixed left-0 top-0 flex w-full items-center justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-                              HOME
-                          </p>
-                      </Link>
+const App: React.FC = () => {
+    const [page, setPage] = useState<string>('home');
+    const [userData, setUserData] = useState<any>(null);
+    const [userName, setUserName] = useState<string | null>(null); // Ustawienie domyślne na null
 
-                  </a>
-              </div>
-          </div>
-          <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-2 lg:text-left">
+    useEffect(() => {
+        const fetchUser = async () => {
+            try {
+                const { data, error } = await supabase.auth.getUser();
 
-              <Link href="/dashboard">
-                  <div
-                      className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-                  >
-                      <h2 className="mb-3 text-2xl font-semibold">
-                          Stajnia{" "}
-                          <span
-                              className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-                      </h2>
-                      <p className="m-0 max-w-[30ch] text-sm opacity-50">
-                          Zarządzaj swoją stajnią!
-                      </p>
-                  </div>
-              </Link>
+                if (error) {
+                    throw error;
+                }
 
-              <Link href="/workers">
-                  <div
-                      className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-                  >
-                      <h2 className="mb-3 text-2xl font-semibold">
-                          Pracownicy{" "}
-                          <span
-                              className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-                      </h2>
-                      <p className="m-0 max-w-[30ch] text-sm opacity-50">
-                          Zarządzaj kadrą!
-                      </p>
-                  </div>
-              </Link>
+                if (data) {
+                    setUserData(data);
+                    setUserName(data.user?.email || null); // Ustawienie userName na email użytkownika lub null, jeśli email nie jest zdefiniowany
+                }
+            } catch (error) {
+                console.error('Error fetching user:');
+                // Obsługa błędów
+            }
+        };
 
-          </div>
+        fetchUser();
+    }, []);
+    const handleLogout = async () => {
+        try {
+            const { error } = await supabase.auth.signOut();
 
-      </main>
-  );
-}
+            if (error) {
+                throw error;
+            }
+
+            setUserData(null); // Wyczyść dane użytkownika po wylogowaniu
+        } catch (error) {
+            console.error('Error signing out:');
+            // Obsługa błędów wylogowania
+        }
+    };
+    const renderPage = () => {
+        switch (page) {
+            case 'signup':
+                return <SignUp onNavigate={setPage} />;
+            case 'login':
+                return <Login onNavigate={setPage} />;
+            case 'wylogowany':
+                return <Wylogowany onNavigate={setPage} userData={userData} />;
+            default:
+                return (
+                    <div className="flex items-center justify-center mt-6">
+
+                    <div className=" font-sans text-center font-semibold justify-center w-72 p-2 text-xl border-b rounded-2xl border-gray-500 border-opacity-50 bg-gradient-to-b from-gray-400 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white">
+                        {userData==null && (
+                            
+                            <button onClick={() => setPage('login')}>Logowanie</button>
+                        )}
+                        
+                        
+                            <h1>{userName !== null ? `Witaj: ${userName}` : ''}</h1>      
+                        {userData && (
+                            <button onClick={handleLogout}>Wyloguj</button>
+                        )}
+                    </div>
+                    </div>
+                );
+
+        }
+
+    };
+
+    return <div>{renderPage()}</div>;
+};
+
+export default App;

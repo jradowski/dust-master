@@ -3,40 +3,17 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import 'reactjs-popup/dist/index.css'
-import supabase from 'C:/dust-master/supabaseClient.js'
-import { useEffect, useState } from 'react'
+import supabase from '/dust-maste2/dust-master/supabaseClient.js';
 
 
 
-
-const fetchData = async () => {
-    const { data, error } = await supabase
-        .from('horse')
-        .select('*')
-        .eq('id', 1)
-        .single()
-
-    console.log('Supabase data:', data)
-    console.log('Supabase error:', error)
-
-    if (error) {
-        console.error(error)
-        console.log('blad debilu')
-    }
-    return data
-}
 
 const Home = async () => {
-    const data = await fetchData()
+    
 
     return (
         <main className="flex min-h-screen flex-col items-center justify-between p-24">
-            <div>
-                <h1>Data from Supabase</h1>
-                <ul>
-                    <li>{data.id}</li>
-                </ul>
-            </div>
+            
 
 
 
@@ -79,7 +56,7 @@ const Home = async () => {
                 </div>
                 <div>
                     <h1 className="font-bold text-center text-2xl w-auto">
-                        {data.imie}
+                        
                     </h1>
                     <ul>
                         <h2 className="font-semibold">Data urodzenia:</h2>

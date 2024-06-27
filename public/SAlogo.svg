@@ -27,15 +27,15 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.6823934"
-     inkscape:cx="-53.488208"
-     inkscape:cy="377.34832"
+     inkscape:zoom="0.96505"
+     inkscape:cx="379.77307"
+     inkscape:cy="555.92974"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g8599"
+     inkscape:current-layer="g6"
      inkscape:showpageshadow="2"
      inkscape:deskcolor="#d1d1d1" />
   <defs
@@ -260,28 +260,32 @@
          id="text5891"
          style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect5893);display:inline;fill:#000000;fill-opacity:1;stroke:none" />
       <g
-         id="g6">
-        <circle
-           style="fill:url(#linearGradient4);fill-opacity:1;stroke:#000000;stroke-width:0.7228072;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-           id="path6618"
-           cx="210.56293"
-           cy="8.2101002"
-           r="101.11208" />
-        <path
-           id="path87"
-           style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.70332;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-           d="m 257.56974,-73.073312 c -20.58486,11.431383 -18.21449,16.077601 -20.51562,20.18431 -2.77825,-1.560838 -40.87166,-11.761227 -73.46072,17.869256 6.05939,-0.955172 12.69325,-3.442441 17.5379,-1.158255 -41.54313,26.8941367 -41.3998,37.3202009 -48.97337,50.794265 6.14014,-3.154657 13.1108,-7.8060308 17.20663,-7.2808148 C 137.64384,25.515023 139.32555,51.930392 143.67127,74.453193 245.51444,92.83413 143.72199,74.291454 245.25693,92.839625 242.3318,60.00495 200.66702,35.12577 234.73764,7.3354492 248.63649,21.415912 256.49057,26.04794 266.00877,28.845107 270.53273,44.986862 303.8174,41.828633 293.8038,18.255218 292.25495,15.819215 289.74986,11.470686 287.35137,7.3354492 272.90582,-30.395068 269.13662,-36.047837 264.18791,-40.976647 c -0.93524,-9.538812 -2.73661,-19.942953 -0.33132,-26.141211 -2.14993,0.822306 -6.73716,4.225386 -10.1837,7.458016 -0.58503,-2.285168 3.04974,-7.678715 3.89685,-13.41347 z"
-           sodipodi:nodetypes="cccccccccccccccc" />
-        <text
-           xml:space="preserve"
-           transform="matrix(0.54640782,0,0,0.80328341,-5.6295063,-427.60994)"
-           id="text4"
-           style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect4);display:inline;fill:url(#linearGradient6);stroke:#000000"><tspan
-             x="7.328125"
-             y="741.692"
-             id="tspan2"><tspan
-               style="font-weight:bold;font-size:85.3333px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold'"
-               id="tspan1">Stable Assistant</tspan></tspan></text>
+         id="g6"
+         transform="translate(5.6050583)">
+        <g
+           id="g1">
+          <circle
+             style="fill:url(#linearGradient4);fill-opacity:1;stroke:#000000;stroke-width:0.722807;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+             id="path6618"
+             cx="210.56293"
+             cy="8.2101002"
+             r="101.11208" />
+          <path
+             id="path87"
+             style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.70332;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             d="m 257.56974,-73.073312 c -20.58486,11.431383 -18.21449,16.077601 -20.51562,20.18431 -2.77825,-1.560838 -40.87166,-11.761227 -73.46072,17.869256 6.05939,-0.955172 12.69325,-3.442441 17.5379,-1.158255 -41.54313,26.8941367 -41.3998,37.3202009 -48.97337,50.794265 6.14014,-3.154657 13.1108,-7.8060308 17.20663,-7.2808148 -11.72072,18.1795738 -9.60005,54.0782218 -5.26864,76.3184348 15.63964,12.699265 52.04293,35.764956 101.78584,18.686706 C 249.12239,80.991579 200.8672,35.426041 234.93782,7.6357202 248.83667,21.716183 256.49057,26.04794 266.00877,28.845107 270.53273,44.986862 303.8174,41.828633 293.8038,18.255218 292.25495,15.819215 289.74986,11.470686 287.35137,7.3354492 272.90582,-30.395068 269.13662,-36.047837 264.18791,-40.976647 c -0.93524,-9.538812 -2.73661,-19.942953 -0.33132,-26.141211 -2.14993,0.822306 -6.73716,4.225386 -10.1837,7.458016 -0.58503,-2.285168 3.04974,-7.678715 3.89685,-13.41347 z"
+             sodipodi:nodetypes="cccccccccccccccc" />
+          <text
+             xml:space="preserve"
+             transform="matrix(0.54640782,0,0,0.80328341,-5.6295063,-427.60994)"
+             id="text4"
+             style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;white-space:pre;shape-inside:url(#rect4);display:inline;fill:url(#linearGradient6);stroke:#000000"><tspan
+               x="7.328125"
+               y="741.692"
+               id="tspan4"><tspan
+                 style="font-weight:bold;font-size:85.3333px;font-family:Verdana;-inkscape-font-specification:'Verdana, Bold'"
+                 id="tspan3">Stable Assistant</tspan></tspan></text>
+        </g>
       </g>
     </g>
   </g>

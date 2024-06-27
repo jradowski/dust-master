@@ -4,91 +4,191 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Popup from "reactjs-popup";
 import 'reactjs-popup/dist/index.css'
-import supabase from 'C:/dust-master/supabaseClient.js'
-import { useEffect, useState } from 'react';
-
+import supabase from '/dust-maste2/dust-master/supabaseClient.js';
 
 let fetchData = async () => {
     let { data, error } = await supabase
-        .from('horse')
-        .select('*')
-        .eq('id', 1)
-        .single()
-
-    console.log('Supabase data:', data)
-    console.log('Supabase error:', error)
-
-    if (error) {
-        console.error(error)
-        console.log('blad debilu')
-    }
+      .from('horse')
+      .select('imie')
+      .eq('nr_padoku', 1)
+      .single()
+  
     return data
 };
+let fetchData2 = async () => {
+    let { data, error } = await supabase
+      .from('horse')
+      .select('imie')
+      .eq('nr_padoku', 2)
+      .single()
+  
+    return data
+};
+let fetchData3 = async () => {
+    let { data, error } = await supabase
+      .from('horse')
+      .select('imie')
+      .eq('nr_padoku', 3)
+      .single()
+  
+    return data
+};
+let fetchData4 = async () => {
+    let { data, error } = await supabase
+      .from('horse')
+      .select('imie')
+      .eq('nr_padoku', 4)
+      .single()
+  
+    return data
+};
+let fetchData5 = async () => {
+    try {
+        // Perform the query on the 'horse' table where 'nr_padoku' equals 5 and get a single record
+        let { data, error } = await supabase
+          .from('horse')          // Specify the table to query from
+          .select('*')            // Select all columns
+          .eq('nr_padoku', 5)     // Apply the filter condition
+          .single();              // Ensure only one record is returned
+        
+        // Check if there is an error
+        if (error) {
+            throw error;
+        }
+        
+        // Check if the record exists
+        if (!data) {
+            return "wolny";  // Return "wolny" if no record is found
+        }
+        
+        // Return the data if the record is found
+        return data;
+    } catch (error) {
+        // Handle the error (e.g., log it, return a custom error message, etc.)
+        console.error('Error fetching data:', error);
+        return "wolny";  // Return "wolny" if an error occurs
+    }
+};
+let fetchData6 = async () => {
+    try {
+        // Perform the query on the 'horse' table where 'nr_padoku' equals 5 and get a single record
+        let { data, error } = await supabase
+          .from('horse')          // Specify the table to query from
+          .select('*')            // Select all columns
+          .eq('nr_padoku', 6)     // Apply the filter condition
+          .single();              // Ensure only one record is returned
+        
+        // Check if there is an error
+        if (error) {
+            throw error;
+        }
+        
+        // Check if the record exists
+        if (!data) {
+            return "wolny";  // Return "wolny" if no record is found
+        }
+        
+        // Return the data if the record is found
+        return data;
+    } catch (error) {
+        // Handle the error (e.g., log it, return a custom error message, etc.)
+        console.error('Error fetching data:', error);
+        return "wolny";  // Return "wolny" if an error occurs
+    }
+};
 
-
-export default function page() {
-
+export default async function page() {
+    const data = await fetchData()
+    const data2 = await fetchData2()
+    const data3 = await fetchData3()
+    const data4 = await fetchData4()
+    const data5 = await fetchData5()
+    const data6 = await fetchData6()
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
-            <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
 
 
-                <div className="fixed left-0 top-0 flex w-full items-center justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-                    <Image
-                        src="/profile.jpg"
-                        alt="avatar"
-                        className="rounded-full p-1"
-                        width={50}
-                        height={24}
-                    />
-                    <h1>{data.imie}</h1>
-                    Kamil Ślimak&nbsp;
-                </div>
-                <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
+        <main className="flex min-h-screen font-sans flex-col items-center justify-between p-24">
 
 
-                    <Link href="/">
-                        <p className="fixed left-0 top-0 flex w-full items-center justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-                            HOME
-                        </p>
-                    </Link>
 
-                </div>
-            </div>
-
-            <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-                <p className="relative text-5xl ">Stajnia Oxer</p>
-            </div>
-
-            <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-3 lg:text-left">
+            <div className=" mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-3 lg:text-left">
 
 
                 <Link href="/dashboard/boxes/Grupa1">
                     <div
-                        className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-blue-500 hover:bg-blue-950  hover:text-blue-500"
+                        className=" w-full rounded-lg border-2 border-transparent px-5 py-4 bg-gradient-to-t from-gray-300 border-gray-600 bg-gray-400 text-gray-800 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white "
                     >
                         <h2 className="mb-3 text-2xl font-semibold">
-                            Grupa pierwsza{" "}
-                            <span
-                                className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+                            Grupa pierwsza
                         </h2>
                         <p className="m-0 max-w-[30ch] text-sm opacity-50">
                             rano
                         </p>
                     </div>
                 </Link>
+            </div>
+            
+            <div className="mb-32 gap-2 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-3 lg:text-left">
+            <div
+                className="group rounded-lg border-transparent px-5 py-4 border-2 bg-gradient-to-t from-gray-300 border-gray-600 bg-gray-400 text-gray-800 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white "
+              >
+                  <h2 className="mb-3 text-2xl font-semibold">
+                      Padok nr 1{" "}
+                      
+                      <span
+                          className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
 
-                <Link href="/dashboard/boxes/Grupa2">
+              
+            </span>
+                  </h2>
+                  <p className="m-0 max-w-[30ch] text-sm opacity-50">
+                  {data?.imie}
+                  </p>
+              </div>
+              <div
+                  className="group rounded-lg border-transparent px-5 py-4 border-2 bg-gradient-to-t from-gray-300 border-gray-600 bg-gray-400 text-gray-800 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white "
+              >
+                  <h2 className="mb-3 text-2xl font-semibold">
+                      Padok nr 2{" "}
+                      
+                      <span
+                          className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+
+              
+            </span>
+                  </h2>
+                  <p className="m-0 max-w-[30ch] text-sm opacity-50">
+                  {data2?.imie}
+                  </p>
+              </div>
+              <div
+                  className="group rounded-lg border-transparent px-5 py-4 border-2 bg-gradient-to-t from-gray-300 border-gray-600 bg-gray-400 text-gray-800 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white "
+              >
+                  <h2 className="mb-3 text-2xl font-semibold">
+                      Padok nr 3{" "}
+                      
+                      <span
+                          className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+
+              
+            </span>
+                  </h2>
+                  <p className="m-0 max-w-[30ch] text-sm opacity-50">
+                  {data3?.imie}
+                  </p>
+              </div>
+        </div>
+       <br></br><br></br>
+        <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-3 lg:text-left">
+        <Link href="/dashboard/boxes/Grupa2">
                     <div
-                        className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-blue-500 hover:bg-blue-950  hover:text-blue-500"
+                        className="group rounded-lg border-2 border-transparent px-5 py-4 bg-gradient-to-t from-gray-300 border-gray-600 bg-gray-400 text-gray-800 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white "
                     >
                         <h2 className="mb-3 text-2xl font-semibold">
-                            Grupa druga{" "}
+                            Grupa druga (ogiery)
                             <span
                                 className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
+
             </span>
                         </h2>
                         <p className="m-0 max-w-[30ch] text-sm opacity-50">
@@ -96,9 +196,56 @@ export default function page() {
                         </p>
                     </div>
                 </Link>
-
-
             </div>
+        <div className="mb-32 grid text-center gap-2 lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-3 lg:text-left">
+              <div
+                  className="group rounded-lg border-transparent px-5 py-4 border-2 bg-gradient-to-t from-gray-300 border-gray-600 bg-gray-400 text-gray-800 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white "
+              >
+                  <h2 className="mb-3 text-2xl font-semibold">
+                      Padok nr 1{" "}
+                      
+                      <span
+                          className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+              
+            </span>
+                  </h2>
+                  <p className="m-0 max-w-[30ch] text-sm opacity-50">
+                  {data4?.imie}
+                  </p>
+              </div>
+              <div
+                  className="group rounded-lg border-transparent px-5 py-4 border-2 bg-gradient-to-t from-gray-300 border-gray-600 bg-gray-400 text-gray-800 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white "
+              >
+                  <h2 className="mb-3 text-2xl font-semibold">
+                      Padok nr 2{" "}
+                      
+                      <span
+                          className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+
+              
+            </span>
+                  </h2>
+                  <p className="m-0 max-w-[30ch] text-sm opacity-50">
+                  {data5.imie}
+                  </p>
+              </div>
+              <div
+                  className="group rounded-lg border-transparent px-5 py-4 border-2 bg-gradient-to-t from-gray-300 border-gray-600 bg-gray-400 text-gray-800 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white "
+              >
+                  <h2 className="mb-3 text-2xl font-semibold">
+                      Padok nr 3{" "}
+                      
+                      <span
+                          className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+
+              
+            </span>
+                  </h2>
+                  <p className="m-0 max-w-[30ch] text-sm opacity-50">
+                  {data6}
+                  </p>
+              </div>
+        </div>
         </main>
 
     );
