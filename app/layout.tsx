@@ -12,6 +12,7 @@ import Cos from '/dust-maste2/dust-master/app/workers/page';
 import React, { useEffect, useState } from 'react';
 import Link from "next/link";
 
+
 const inter = Inter({ subsets: ["latin"] });
 
 
@@ -70,7 +71,7 @@ export default function RootLayout({
           </div>
             <div className="flex flex-row">
                 <div
-                    className=" flex flex-col gap-2 h-screen w-1/12 float-top-left text-zinc-700 border-r-2 border-zinc-200 bg-gradient-to-t from-white  bg-gray-400 font-sans font-bold italic text-lg dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-r-2 dark:border-gray-600  dark:text-white">
+                    className=" flex flex-col gap-2 min-h-screen w-1/12 float-top-left text-zinc-700 border-r-2 border-zinc-200 bg-gradient-to-t from-white  bg-gray-400 font-sans font-bold italic text-lg dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-r-2 dark:border-gray-600  dark:text-white">
 
                     <Link href="/dashboard">
                         <div className="hover:bg-gray-500 w-full">

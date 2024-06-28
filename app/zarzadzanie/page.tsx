@@ -10,7 +10,7 @@ export default function page() {
 
 
 
-                <Link href="/mod_boksy">
+                <Link href="/zarzadzanie/modboksy">
                     <div
                         className="group rounded-lg  border-b border-gray-600 px-5 py-4 bg-gradient-to-t from-white bg-gray-400 text-gray-800 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white "
                     >
@@ -23,7 +23,7 @@ export default function page() {
                     </div>
                 </Link>
 
-                <Link href="/mod_konie">
+                <Link href="/zarzadzanie/modkonie">
                     <div
                         className="group rounded-lg  border-b border-gray-600 px-5 py-4 bg-gradient-to-t from-white  bg-gray-400 text-gray-800 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white "
                     >
@@ -36,7 +36,7 @@ export default function page() {
                     </div>
                 </Link>
 
-                <Link href="/mod_trening">
+                <Link href="/zarzadzanie/modtrening">
                     <div
                         className="group rounded-lg  border-b border-gray-600 px-5 py-4 bg-gradient-to-t from-white  bg-gray-400 text-gray-800 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white "
                     >
@@ -49,7 +49,7 @@ export default function page() {
                     </div>
                 </Link>
 
-                <Link href="/zapasowy">
+                <Link href="/zarzadzanie/zapasowy">
                 <div
                     className="group rounded-lg  border-b border-gray-600 px-5 py-4 bg-gradient-to-t from-white  bg-gray-400 text-gray-800 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white "
                 >

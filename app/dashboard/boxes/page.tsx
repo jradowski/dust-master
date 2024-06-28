@@ -134,7 +134,7 @@ export default async function page() {
             </span>
                   </h2>
                   <p className="m-0 max-w-[30ch] text-sm opacity-50">
-                  {data4.imie}
+                  {data4.imie} //tutaj błąd jakiś daje
                   </p>
               </div>
           </Link>
