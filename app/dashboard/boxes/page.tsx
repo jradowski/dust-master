@@ -63,31 +63,31 @@ export default async function page() {
   <main className=" min-h-full p-24">
 
 
-      <div className=" flex flex-col gap-4 text-center  lg:mb-0 lg:w-full lg:max-w-5xl  lg:text-left">
+      <div className=" flex flex-col gap-4 text-center  lg:mb-0 lg:w-full   lg:text-left">
 
 
           <Link href="/dashboard/boxes/Box1">
               <div
-                  className=" rounded-lg  border-transparent px-5 py-4 bg-gradient-to-t from-white border-gray-600 bg-gray-400 text-gray-800 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white "
+                  className="group rounded-tl-xl  text-3xl text-justify mx-2 bg-white border-r-2 border-b-2 border-zinc-200 p-5 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-b-2 dark:border-r-2 dark:border-gray-600  "
               >
                   <h2 className="mb-3 text-2xl font-semibold">
                       1{" "}
-                      
+
                       <span
                           className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
               -&gt;
               
             </span>
                   </h2>
-                  <p className="m-0 max-w-[30ch] text-sm opacity-50">
-                  {data.imie}
+                  <p className="m-0 max-w-[30ch] text-base opacity-50">
+                      {data.imie}
                   </p>
               </div>
           </Link>
 
           <Link href="/dashboard/boxes/Box2">
               <div
-                  className=" rounded-lg  border-transparent px-5 py-4 bg-gradient-to-t from-white border-gray-600 bg-gray-400 text-gray-800 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white "
+                  className="group rounded-tl-xl  text-2xl text-justify mx-2 bg-white border-r-2 border-b-2 border-zinc-200 p-5 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-b-2 dark:border-r-2 dark:border-gray-600  "
               >
                   <h2 className="mb-3 text-2xl font-semibold">
                       2{" "}
@@ -96,18 +96,16 @@ export default async function page() {
               -&gt;
             </span>
                   </h2>
-                  <p className="m-0 max-w-[30ch] text-sm opacity-50">
-                  {data2.imie}
+                  <p className="m-0 max-w-[30ch] text-base opacity-50">
+                      {data2.imie}
                   </p>
               </div>
           </Link>
 
 
-
-
           <Link href="/dashboard/boxes/Box3">
               <div
-                  className=" rounded-lg  border-transparent px-5 py-4 bg-gradient-to-t from-white border-gray-600 bg-gray-400 text-gray-800 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white "
+                  className="group rounded-tl-xl  text-2xl text-justify mx-2 bg-white border-r-2 border-b-2 border-zinc-200 p-5 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-b-2 dark:border-r-2 dark:border-gray-600  "
               >
                   <h2 className="mb-3 text-2xl font-semibold">
                       3{" "}
@@ -116,15 +114,15 @@ export default async function page() {
               -&gt;
             </span>
                   </h2>
-                  <p className="m-0 max-w-[30ch] text-sm opacity-50">
-                  {data3.imie}
+                  <p className="m-0 max-w-[30ch] text-base opacity-50">
+                      {data3.imie}
                   </p>
               </div>
           </Link>
 
           <Link href="/dashboard/boxes/Box4">
               <div
-                  className=" rounded-lg  border-transparent px-5 py-4 bg-gradient-to-t from-white border-gray-600 bg-gray-400 text-gray-800 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white "
+                  className="group rounded-tl-xl  text-2xl text-justify mx-2 bg-white border-r-2 border-b-2 border-zinc-200 p-5 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-b-2 dark:border-r-2 dark:border-gray-600  "
               >
                   <h2 className="mb-3 text-2xl font-semibold">
                       4{" "}
@@ -133,16 +131,16 @@ export default async function page() {
               -&gt;
             </span>
                   </h2>
-                  <p className="m-0 max-w-[30ch] text-sm opacity-50">
-                  {data4.imie} //tutaj błąd jakiś daje
+                  <p className="m-0 max-w-[30ch] text-base opacity-50">
+                  {data4.imie} 
                   </p>
               </div>
           </Link>
 
           <Link href="/dashboard/boxes/Box5">
-            
+
               <div
-                  className=" rounded-lg  border-transparent px-5 py-4 bg-gradient-to-t from-white border-gray-600 bg-gray-400 text-gray-800 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white "
+                  className="group rounded-tl-xl  text-2xl text-justify mx-2 bg-white border-r-2 border-b-2 border-zinc-200 p-5 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-b-2 dark:border-r-2 dark:border-gray-600  "
               >
                   <h2 className="mb-3 text-2xl font-semibold">
                       5{" "}
@@ -151,25 +149,8 @@ export default async function page() {
               -&gt;
             </span>
                   </h2>
-                  <p className="m-0 max-w-[30ch] text-sm opacity-50">
-                  {data5.imie}
-                  </p>
-              </div>
-          </Link>
-
-          <Link href="/dashboard/boxes/Box6">
-              <div
-                  className="rounded-lg  border-transparent px-5 py-4 bg-gradient-to-t from-white border-gray-600 bg-gray-400 text-gray-800 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white "
-              >
-                  <h2 className="mb-3 text-2xl font-semibold">
-                      Zarządzaj stajnią{" "}
-                      <span
-                          className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-                  </h2>
-                  <p className="m-0 max-w-[30ch] text-sm opacity-50">
-                      Panel administracyjny
+                  <p className="m-0 max-w-[30ch] text-base opacity-50">
+                      {data5.imie}
                   </p>
               </div>
           </Link>

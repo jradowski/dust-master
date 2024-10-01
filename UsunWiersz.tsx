@@ -5,6 +5,7 @@ import Link from 'next/link'
 import 'reactjs-popup/dist/index.css'
 import supabase from './supabaseClient.js'
 import { useEffect, useState } from 'react'
+import 'C:/dust-maste2/dust-master/app/globals.css';
 
 
 const UsunWiersz: React.FC = () => {
@@ -54,9 +55,10 @@ const UsunWiersz: React.FC = () => {
     return (
       <div>
         <form onSubmit={(e) => { e.preventDefault(); handleDelete(); }}>
-          <div>
+          <div >
             <label htmlFor="horse">Wybierz konia do usunięcia:<br></br></label>
             <select
+                className="custom-select"
               id="horse"
               name="horse"
               value={selectedHorseId || ''}
@@ -72,7 +74,7 @@ const UsunWiersz: React.FC = () => {
             </select>
             </div>
           <br></br>
-          <button type="submit">Usuń</button>
+          <button className="custom-button" type="submit">Usuń</button>
           
         </form>
         {message && <p>{message}</p>}

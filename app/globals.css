@@ -33,16 +33,59 @@ body {
 }
 
 .custom-input {
-  color: black;
+  color: #000001;
   background-color: lightgray;
+  margin-bottom:2px;
+  width: 100%;
+}
+
+.custom-textarea {
+  color: #000001;
+  background-color: lightgray;
+  margin-bottom:2px;
+  width: 100%;
+  min-height: 100px;
+}
+
+
+
+.custom-select{
+  color: #000001;
+  background-color: lightgray;
+  margin-bottom:6px;
+}
+
+
+.custom-checkbox{
+  color: #000001;
+  background-color: lightgray;
+  margin-bottom:2px;
+  float: left;
+}
+
+.custom-button{
+  color:black;
+  background-color: lightgrey;
+  padding:2px;
+  margin:2px;
+}
+
+.button-table{
+  margin: 2px;
 }
 
 .table-header {
-  color: black;
+  color: #000001;
   background-color: lightgray;
+  padding: 10px;
+  text-align: center;
+  border: solid black 2px;
 }
 
 .table-cell {
-  color: black;
+  color: #000001;
   background-color: lightgray;
+  padding: 10px;
+  text-align: center;
+  border: solid black 2px
 }

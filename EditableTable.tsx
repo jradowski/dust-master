@@ -104,6 +104,7 @@ const EditableTable: React.FC = () => {
   return (
     <div>
       <input
+          className="custom-select"
         type="text"
         value={value}
         onChange={handleChange}
@@ -142,7 +143,7 @@ const EditableTable: React.FC = () => {
               </tr>
             </tbody>
           </table>
-          <button onClick={handleSave}>Save</button>
+          <button className="custom-button" onClick={handleSave}>Zapisz</button>
         </div>
       )}
     </div>

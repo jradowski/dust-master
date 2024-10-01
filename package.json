@@ -15,10 +15,13 @@
     "@nextui-org/switch": "^2.0.28",
     "@prisma/client": "^5.14.0",
     "@supabase/supabase-js": "^2.43.4",
-    "next": "14.2.3",
+    "@types/react-router-dom": "^5.3.3",
+    "date-fns": "^3.6.0",
+    "next": "^14.2.13",
     "react": "^18",
     "react-dom": "^18",
     "react-modal": "^3.16.1",
+    "react-router-dom": "^6.26.2",
     "reactjs-popup": "^2.0.6"
   },
   "devDependencies": {

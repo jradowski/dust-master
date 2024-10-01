@@ -7,14 +7,17 @@ import supabase from './supabaseClient.js'
 import { useEffect, useState } from 'react'
 //import './tabela.css'; // Importowanie pliku CSS
 import 'C:/dust-maste2/dust-master/app/globals.css';
-import '@/boxtabela.css';
-import './tabela.css'
+import './boxtabela.css';
+
+interface TreningJedenProps {
+    horseIdT: number; // ID konia
+}
 
 type TreningData = {
     [key: string]: any; // Typowanie ogólne dla kolumn
   };
   
-  const TreningTable: React.FC = () => {
+  const TreningJeden: React.FC<TreningJedenProps> = ({ horseIdT }) => {
     const [columns, setColumns] = useState<string[]>([]);
     const [data, setData] = useState<TreningData[]>([]);
     const [loading, setLoading] = useState(true);
@@ -24,7 +27,9 @@ type TreningData = {
         // Pobieranie danych z tabeli 'trening'
         let { data, error } = await supabase
           .from('trening')
-          .select('*');
+          .select('*, imie')
+          .eq('nr_konia',  horseIdT); 
+          
         
         if (error) {
           console.error(error);
@@ -42,18 +47,20 @@ type TreningData = {
       };
   
       fetchData();
-    }, []);
+    }, [horseIdT]);
   
     if (loading) {
       return <div>Ładowanie danych...</div>;
     }
 
       return (
-          <table>
+       
+          <table >
               <thead>
               <tr>
+                
                   {columns.map((column) => (
-                      <th key={column} className="table-header">{column}</th>
+                      <th key={column} >{column}</th>
                   ))}
               </tr>
               </thead>
@@ -61,7 +68,7 @@ type TreningData = {
               {data.map((row, rowIndex) => (
                   <tr key={rowIndex}>
                       {columns.map((column) => (
-                          <td key={column} className="table-cell">{row[column]}</td>
+                          <td key={column} >{row[column]}</td>
                       ))}
                   </tr>
               ))}
@@ -70,4 +77,4 @@ type TreningData = {
       );
   };
   
-  export default TreningTable;
+  export default TreningJeden;

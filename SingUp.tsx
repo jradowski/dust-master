@@ -4,6 +4,7 @@ import Link from 'next/link'
 import 'reactjs-popup/dist/index.css'
 import supabase from './supabaseClient.js'
 import React, { useState } from 'react'
+import 'C:/dust-maste2/dust-master/app/globals.css';
 
 
 const SignUp: React.FC<{ onNavigate: (page: string) => void }> = ({ onNavigate }) => {
@@ -15,6 +16,12 @@ const SignUp: React.FC<{ onNavigate: (page: string) => void }> = ({ onNavigate }
         const { data, error } = await supabase.auth.signUp({
             email,
             password,
+            options: {
+                data: {
+                  
+                }
+              }
+            
         })
         if (error) {
             console.error('Error signing up:', error.message)
@@ -26,12 +33,13 @@ const SignUp: React.FC<{ onNavigate: (page: string) => void }> = ({ onNavigate }
 
     return (
         <div className="flex items-center justify-center mt-6">
-            <div className="font-sans text-center font-semibold justify-center w-72 p-2 text-xl border-b rounded-2xl border-gray-500 border-opacity-50 bg-gradient-to-b from-gray-400 dark:text-black dark:border-blue-900 dark:bg-gradient-to-b dark:from-blue-600 dark:to-blue-950">
+            <div className="font-sans text-center font-semibold justify-center w-72 p-2 text-xl border-b rounded-2xl border-gray-500 border-opacity-50 bg-gradient-to-b from-gray-400 dark:bg-gradient-to-b dark:from-zinc-800 dark:bg-zinc-800 dark:border-2 dark:border-gray-600  dark:text-white">
                 <h1>Załóż konto</h1>
                 <form onSubmit={handleSignUp}>
                     <label>
                         Email:
                         <input
+                            className="custom-input"
                             type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
@@ -41,6 +49,7 @@ const SignUp: React.FC<{ onNavigate: (page: string) => void }> = ({ onNavigate }
                     <label>
                         Hasło:
                         <input
+                            className="custom-input"
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}

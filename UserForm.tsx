@@ -5,6 +5,7 @@ import Link from 'next/link'
 import 'reactjs-popup/dist/index.css'
 import supabase from './supabaseClient.js'
 import { useEffect, useState } from 'react'
+import '@/tabela.css'
 
 
 const UserForm: React.FC = () => {
@@ -76,6 +77,7 @@ const UserForm: React.FC = () => {
         <div>
           <label htmlFor="id">ID:</label>
           <input
+              className="custom-input"
             type="text"
             id="id"
             name="id"
@@ -84,9 +86,10 @@ const UserForm: React.FC = () => {
             required
           />
         </div>
-        <div className="text-black">
+        <div >
           <label htmlFor="imie">Imię:</label>
           <input
+            className="custom-input"
             type="text"
             id="imie"
             name="imie"
@@ -96,8 +99,9 @@ const UserForm: React.FC = () => {
           />
         </div>
         <div >
-          <label htmlFor="data_urodzenia">Data urodzenia:</label>
+          <label htmlFor="data_urodzenia" >Data urodzenia:</label>
           <input
+            className="custom-input"
             type="date"
             id="data_urodzenia"
             name="data_urodzenia"
@@ -110,6 +114,7 @@ const UserForm: React.FC = () => {
         <div>
           <label htmlFor="plec">Płeć:</label>
           <select
+            className="custom-select"
             id="plec"
             name="plec"
             value={plec}
@@ -126,6 +131,7 @@ const UserForm: React.FC = () => {
         <div>
           <label htmlFor="id_wlasciciela">ID właściciela:</label>
           <input
+            className="custom-input"
             type="text"
             id="id_wlasciciela"
             name="id_wlasciciela"
@@ -137,6 +143,7 @@ const UserForm: React.FC = () => {
         <div>
           <label htmlFor="wlasciciel">Właściciel:</label>
           <input
+            className="custom-input"
             type="text"
             id="wlasciciel"
             name="wlasciciel"
@@ -149,6 +156,7 @@ const UserForm: React.FC = () => {
           Rodowód: <br></br>
           <label htmlFor="v">Imie ojca:</label>
           <input
+            className="custom-input"
             type="text"
             id="v"
             name="v"
@@ -160,6 +168,7 @@ const UserForm: React.FC = () => {
         <div>
           <label htmlFor="m">Imie matki:</label>
           <input
+            className="custom-input"
             type="text"
             id="m"
             name="m"
@@ -170,6 +179,7 @@ const UserForm: React.FC = () => {
        
           <label htmlFor="mv">/ </label>
           <input
+            className="custom-input"
             type="text"
             id="mv"
             name="mv"
@@ -180,6 +190,7 @@ const UserForm: React.FC = () => {
         </div>            
           <label htmlFor="kowal">Ostatnia wizyta kowala:</label>
           <input
+            className="custom-input"
             type="date"
             id="kowal"
             name="kowal"
@@ -192,6 +203,7 @@ const UserForm: React.FC = () => {
         <div>
           <label htmlFor="ilosc_posilkow">Ilość posiłków:</label>
           <select
+            className="custom-select"
             id="ilosc_posilkow"
             name="ilosc_posilkow"
             value={ilosc_posilkow}
@@ -207,6 +219,7 @@ const UserForm: React.FC = () => {
         <div>
           <label htmlFor="wielkosc_posilku">Ilość miarek na posiłek:</label>
           <select
+            className="custom-select"
             id="wielkosc_posilku"
             name="wielkosc_posilku"
             value={wielkosc_posilku}
@@ -221,6 +234,7 @@ const UserForm: React.FC = () => {
         </div>
         <label htmlFor="posilek">Skład posiłku:</label>
           <input
+            className="custom-input"
             type="text"
             id="posilek"
             name="posilek"
@@ -242,6 +256,7 @@ const UserForm: React.FC = () => {
         <div>
           <label htmlFor="nr_boksu">Nr boksu:</label>
           <input
+            className="custom-input"
             type="text"
             id="nr_boksu"
             name="nr_boksu"
@@ -253,6 +268,7 @@ const UserForm: React.FC = () => {
         <div>
           <label htmlFor="nr_padoku">Nr padoku:</label>
           <input
+            className="custom-input"
             type="text"
             id="nr_padoku"
             name="nr_padoku"
@@ -263,18 +279,21 @@ const UserForm: React.FC = () => {
         </div>
         <div>
           <label>
+            Czy klacz należy do stada matek?
             <input
+              className="custom-checkbox"
               type="checkbox"
               checked={isNrHodowlanyEnabled}
               onChange={(e) => setIsNrHodowlanyEnabled(e.target.checked)}
             />
-             Czy klacz należy do stada matek?
+
           </label>
         </div>
         {isNrHodowlanyEnabled && (
           <div>
             <label htmlFor="nr_hodowlany">Nr hodowlany:</label>
             <input
+              className="custom-input"
               type="text"
               id="nr_hodowlany"
               name="nr_hodowlany"
@@ -285,18 +304,21 @@ const UserForm: React.FC = () => {
         )}
         <div>
           <label>
+            Czy koń jest w treningu sportowym?
             <input
+                className="custom-checkbox"
               type="checkbox"
               checked={isNrTreningowyEnabled}
               onChange={(e) => setIsNrTreningowyEnabled(e.target.checked)}
             />
-             Czy koń jest w treningu sportowym?
+         
           </label>
         </div>
         {isNrTreningowyEnabled && (
           <div>
             <label htmlFor="nr_treningowy">Nr treningowy:</label>
             <input
+                className="custom-input"
               type="text"
               id="nr_treningowy"
               name="nr_treningowy"
@@ -305,7 +327,7 @@ const UserForm: React.FC = () => {
             />
           </div>
         )}
-        <button type="submit">Wyślij</button>
+        <button className="custom-button" type="submit">Wyślij</button>
       </form>
     </div>
   );
