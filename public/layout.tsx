@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../app/globals.css";
-import Dropdown from "C:/dust-maste2/dust-master/app/components/Dropdown";
+import Dropdown from "../app/components/Dropdown";
 import Image from "next/image";
 
 const inter = Inter({ subsets: ["latin"] });
