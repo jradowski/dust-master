@@ -5,7 +5,7 @@ import Link from 'next/link'
 import 'reactjs-popup/dist/index.css'
 import supabase from './supabaseClient.js'
 import { useEffect, useState } from 'react'
-import 'C:/dust-maste2/dust-master/app/globals.css';
+import '/app/globals.css';
 
 
 const UsunWiersz: React.FC = () => {

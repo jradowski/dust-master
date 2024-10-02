@@ -100,7 +100,7 @@ export default function RootLayout({
                 </Link>
                 <Router>
                 
-                <WlascicielStajniTab>
+                
                 <Link href="/zarzadzanie">
                     <div className="hover:bg-gray-500  pl-2">
                         Zarządzanie stajnią
@@ -112,7 +112,7 @@ export default function RootLayout({
                         Zarządzanie pracownikami
                     </div>
                 </Link>
-                </WlascicielStajniTab>
+              
                 
                 </Router>
 

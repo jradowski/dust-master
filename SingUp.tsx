@@ -4,7 +4,7 @@ import Link from 'next/link'
 import 'reactjs-popup/dist/index.css'
 import supabase from './supabaseClient.js'
 import React, { useState } from 'react'
-import 'C:/dust-maste2/dust-master/app/globals.css';
+import '/app/globals.css';
 
 
 const SignUp: React.FC<{ onNavigate: (page: string) => void }> = ({ onNavigate }) => {

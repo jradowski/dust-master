@@ -4,20 +4,15 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
-  "prisma": {
-    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
-  },
   "dependencies": {
     "@nextui-org/switch": "^2.0.28",
-    "@prisma/client": "^5.14.0",
     "@supabase/supabase-js": "^2.43.4",
     "@types/react-router-dom": "^5.3.3",
     "date-fns": "^3.6.0",
-    "next": "^14.2.13",
     "react": "^18",
     "react-dom": "^18",
     "react-modal": "^3.16.1",
@@ -29,11 +24,12 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@types/react-modal": "^3.16.3",
+    "babel-preset-next": "^1.4.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
+    "next": "^14.2.14",
     "postcss": "^8",
-    "prisma": "^5.14.0",
-    "tailwindcss": "^3.4.1",
+    "tailwindcss": "^3.4.13",
     "typescript": "^5"
   }
 }
