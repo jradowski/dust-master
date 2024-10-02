@@ -15,7 +15,7 @@ import WorkScheduleWeeklyDlaPracownikow from '@/WorkScheduleWeeklyDlaPracownikow
 import AddTask from '@/AddTask';
 import TaskList from '@/TaskList';
 import TaskListDlaPracownikow from '@/TaskListDlaPracownikow';
-import 'C:/dust-maste2/dust-master/app/globals.css';
+import '@/globals.css';
 
 const Home = async () => {
 

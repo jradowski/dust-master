@@ -17,7 +17,8 @@
     "react-dom": "^18",
     "react-modal": "^3.16.1",
     "react-router-dom": "^6.26.2",
-    "reactjs-popup": "^2.0.6"
+    "reactjs-popup": "^2.0.6",
+    "swr": "^2.2.5"
   },
   "devDependencies": {
     "@types/node": "^20",

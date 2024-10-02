@@ -3,7 +3,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import 'reactjs-popup/dist/index.css'
-import supabase from '/dust-maste2/dust-master/supabaseClient.js';
+import supabase from '@/supabaseClient.js';
 
 
 

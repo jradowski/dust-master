@@ -3,9 +3,9 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import 'reactjs-popup/dist/index.css'
-import supabase from './supabaseClient.js'
+import supabase from '@/supabaseClient.js'
 import { useEffect, useState } from 'react'
-import './tabela.css'; // Importowanie pliku CSS
+import '@/tabela.css'; // Importowanie pliku CSS
 
 type TreningData = {
   nr_konia: number;

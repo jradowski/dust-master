@@ -2,9 +2,9 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import 'reactjs-popup/dist/index.css'
-import supabase from '/dust-maste2/dust-master/supabaseClient.js';
-import TreningJeden from '/dust-maste2/dust-master/TreningJeden';
-import TreningTabela from '/dust-maste2/dust-master/TreningTabela';
+import supabase from '@/supabaseClient.js';
+import TreningJeden from '@/TreningJeden';
+import TreningTabela from '@/TreningTabela';
 import TreningTable from '@/TreningTabela';
 import Notatkoa from '@/Notatkoa';
 import '@/boxtabela.css';

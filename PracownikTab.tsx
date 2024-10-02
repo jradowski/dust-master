@@ -1,5 +1,5 @@
 import React from 'react';
-import ProtectedRoute from './ProtectedRoute';
+import ProtectedRoute from '@/ProtectedRoute';
 
 const PracownikTab = () => {
   return (

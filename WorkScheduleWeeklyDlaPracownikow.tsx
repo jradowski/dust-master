@@ -2,10 +2,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import 'reactjs-popup/dist/index.css'
-import supabase  from './supabaseClient.js'
+import supabase  from '@/supabaseClient.js'
 import React, { useState, useEffect, useCallback,  FormEvent  } from 'react';
-import './Schedule.css';
-import './tabela.css'
+import '@/Schedule.css';
+import '@/tabela.css'
 
 
 

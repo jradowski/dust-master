@@ -4,9 +4,9 @@ import Link from 'next/link'
 import 'reactjs-popup/dist/index.css'
 import React, { useEffect, useState } from 'react';
 import supabase from '@/supabaseClient.js';
-import SignUp from 'C:/dust-maste2/dust-master/SingUp';
-import Login from 'C:/dust-maste2/dust-master/Login';
-import Wylogowany from 'C:/dust-maste2/dust-master/Wylogowany';
+import SignUp from '@/SingUp';
+import Login from '@/Login';
+import Wylogowany from '@/Wylogowany';
 
 
 

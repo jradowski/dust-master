@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Popup from "reactjs-popup";
 import 'reactjs-popup/dist/index.css'
-import supabase from '/dust-maste2/dust-master/supabaseClient.js';
+import supabase from '@/supabaseClient.js';
 
 let fetchData = async () => {
     let { data, error } = await supabase
